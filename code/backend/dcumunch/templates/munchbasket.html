@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Munch Diary {% endblock %}
+
+
+{% block content %}
+
+{%if empty%}
+    <p> No Munches Today </p>
+{% else %}
+<h1 id="usertitle"> Munch Diary</h1>
+{% for item in sbi %}
+
+<h4 class="prodtitle"> {{item.product_id.name}}  X{{item.quantity}}</h4> 
+
+
+
+<div  class = "rcorners1" >
+
+<div class="flex-container">
+
+<div class="image-flex">
+
+</div>
+
+
+
+<div class = "rcornersinfo3">
+<img class="circleimage3" src="{{item.product_id.image.url}}" height="100" width="100"/>
+    <div>
+    <h2> {{ item.product_id.calories}} </h2> 
+    <strong><p> CALORIES </p> </strong>  </div>
+    <div><h2> {{ item.product_id.carbs}}  </h2> 
+    <strong><p> CARBS </p> </strong></div>
+    
+    <div><h2> {{ item.product_id.protein}}</h2> 
+    <strong><p> PROTEIN </p> </strong></div>
+    
+    <div><h2> {{ item.product_id.fats}}  </h2> 
+    <strong><p> FATS </p> </strong></div>
+
+</div>
+
+
+
+<br>
+
+        
+
+   
+            </div>
+
+        </div>
+       
+  
+          <a  href="/munchremoveitem/{{item.id}}"> <h2 class="remove2" > Remove</h2></a>     
+        {%endfor%}
+
+
+{%endif%}
+
+{% endblock %}

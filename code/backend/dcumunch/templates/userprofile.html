@@ -1,0 +1,35 @@
+{%  extends "base.html" %}
+
+{% block title %} {{user.username}} {%  endblock %}
+
+{% block content %}
+
+<h1 id="usertitle"> Welcome {{user.username}} !</h1>
+<div class = "rcornersinfo">
+   
+    <div><h2> {{ user.account.remain_calories}} </h2> 
+    <strong><p> CALORIES </p> </strong>  </div>
+    <div><h2> {{ user.account.remain_carbs}}  </h2> 
+    <strong><p> CARBS </p> </strong></div>
+    
+    <div><h2> {{ user.account.remain_protein}}</h2> 
+    <strong><p> PROTEIN </p> </strong></div>
+    
+    <div><h2> {{ user.account.remain_fats}}  </h2> 
+    <strong><p> FATS </p> </strong></div>
+    
+    
+    </div>
+
+    <div class = "rcornersinfo">
+<a href="/orderhistory/"> Order History</a> <br>
+</div>
+<div class = "rcornersinfo">
+<a href="/munchdiary/"> Munch Diary</a> <br></div>
+
+<div class = "rcornersinfo">
+<a href="/logout">Logout </a> 
+</div>
+<!-- Put user info here -->
+<!-- Latest munches -->
+{% endblock %}

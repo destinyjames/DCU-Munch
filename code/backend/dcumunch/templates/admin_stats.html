@@ -1,0 +1,91 @@
+{%  extends "base.html" %}
+
+{% block title %}Admin Statistics{%  endblock %}
+
+{%  block content %}
+
+  <h2> Top meal likes </h2>
+
+   {% for m in toplikedmeals %}
+   <div class = "rcorners1">
+   <a href="/all-meals/{{m.id}}" >
+   <div id="rest-content-meals">
+   <img class="circleimage" src="{{m.image.url}}" height="200" width="200" /> </a>
+   <h3>{{m.name}} {{m.desc}} </h3>
+  <p> {{ m.liked.all.count }} likes </p>
+  <p> {{ m.munched }} Munches </p>
+  <p> {{ m.ordered }} Ordered </p>
+</div>
+</div>
+   {% endfor %}
+
+    
+   <h2> Top Meal Orders </h2>
+   {% for m in toporderedmeals %}
+   <div class = "rcorners1">
+      <a href="/all-meals/{{m.id}}" >
+      <div id="rest-content-meals">
+      <img class="circleimage" src="{{m.image.url}}" height="200" width="200" /> </a>
+      <h3>{{m.name}} {{m.desc}} </h3>
+     <p> {{ m.liked.all.count }} likes </p>
+     <p> {{ m.munched }} Munches </p>
+     <p> {{ m.ordered }} Ordered </p>
+   </div>
+   </div>
+
+      {% endfor %}
+      
+
+      <h2> Top Meal Munches </h2>
+
+ 
+         {% for m in topmunchedmeals %}
+         <div class = "rcorners1">
+            <a href="/all-meals/{{m.id}}" >
+            <div id="rest-content-meals">
+            <img class="circleimage" src="{{m.image.url}}" height="200" width="200" /> </a>
+            <h3>{{m.name}} {{m.desc}} </h3>
+           <p> {{ m.liked.all.count }} likes </p>
+           <p> {{ m.munched }} Munches </p>
+           <p> {{ m.ordered }} Ordered </p>
+         </div>
+         </div>
+        
+         {% endfor %}
+     
+
+         <h2> Top Recipe Likes </h2>
+
+         {% for m in toplikedrecipes %}
+         <div class = "rcorners1">
+            <a href="/all-recipes/{{m.id}}" >
+            <div id="rest-content-meals">
+            <img class="circleimage" src="{{m.image.url}}" height="200" width="200" /> </a>
+            <h3>{{m.name}} </h3>
+           <p> {{ m.liked.all.count }} likes </p>
+           <p> {{ m.munched }} Munches </p>
+         </div>
+
+         </div>
+        
+         {% endfor %}
+       
+
+         <h2> Top Recipe Munches </h2>
+    
+            {% for m in topmunchedrecipes %}
+            <div class = "rcorners1">
+               <a href="/all-recipes/{{m.id}}" >
+               <div id="rest-content-meals">
+               <img class="circleimage" src="{{m.image.url}}" height="200" width="200" /> </a>
+               <h3>{{m.name}} </h3>
+              <p> {{ m.liked.all.count }} likes </p>
+              <p> {{ m.munched }} Munches </p>
+            </div>
+            </div>
+      
+           
+            {% endfor %}
+      
+
+{%  endblock %}

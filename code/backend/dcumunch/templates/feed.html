@@ -1,0 +1,106 @@
+{%  extends "base.html" %}
+
+{% block title %}Home{%  endblock %}
+
+{% load socialaccount %}
+ <!-- Get google photo code  https://tome.oauth.io/providers/google/get-profile-picture-->
+ {%  block content %}
+
+
+ <div class = "rcornersinfo">
+<div><h2> {{ user.account.remain_calories}} </h2> 
+<strong><p> CALORIES </p> </strong>  </div>
+<div><h2> {{ user.account.remain_carbs}}  </h2> 
+<strong><p> CARBS </p> </strong></div>
+
+<div><h2> {{ user.account.remain_protein}}</h2> 
+<strong><p> PROTEIN </p> </strong></div>
+
+<div><h2> {{ user.account.remain_fats}}  </h2> 
+<strong><p> FATS </p> </strong></div>
+
+
+</div>
+
+ 
+
+<div class = "rcorners1">
+<h2 id="title"> Recommended </h2> 
+ <a href="/all-meals/{{recommended.id}}" >
+   
+ <img class="circleimage"  src="{{ recommended.image.url}}" height="100" width="100"/> </a>
+ <div>    
+ 
+  <h2> Reccommended Meals </h2> 
+
+  <div id="rest-content">
+    <h3> {{ recommended.calories}} </h3> 
+    <strong><p> CALORIES </p> </strong>  </div>
+ <form action= "like/{{recommended.id}}" method="POST" class="ui-form">
+ <input type='hidden' name='post_id' value = "{{recommended.id}}">
+ <button class ="munchbutton"><a href="/munch/{{recommended.id}}">Munch</a></button>
+ {% if user not in recommended.liked.all %}
+<button class="munchbutton" type="submit">Like</button> 
+
+{% else %}
+<button class="munchbutton" type="submit">UnLike</button>  
+{% endif %}
+</form>
+{{ recommended.liked.all.count }} Likes
+</div>
+
+
+</div>
+  <!-- Like button -->
+ 
+
+  <div class = "rcorners1">
+
+ <a href="/all-meals/{{deal.id}}" >
+ <img class="circleimage" src="{{ deal.image.url}}" height="100" width="100"/> </a>
+ <div> 
+  <h2> Meal Deal </h2> 
+ <div id="rest-content">
+  <h4> €{{ deal.price}} </h4> 
+  <strong><p> {{deal.name}} </p> </strong>  </div>
+ 
+ <form action= "like/{{deal.id}}" method="POST" class="ui-form">
+ <input type='hidden' name='post_id' value = "{{deal.id}}">
+ <button class ="munchbutton"><a href="/munch/{{deal.id}}">Munch</a></button>
+ {% if user not in deal.liked.all %}
+<button class ="munchbutton" type="submit">Like</button>
+{% else %}
+<button class ="munchbutton" type="submit">UnLike</button>  
+{% endif %}
+</form>
+{{ deal.liked.all.count }} Likes
+</div>
+</div>
+
+
+<div class = "rcorners1">
+  <h2 id="title"> Recipes </h2> 
+ <a href="/all-recipes/{{recipe.id}}" >
+
+ <img class="circleimage" src="{{ recipe.image.url}}" height="100" width="100"/> </a>
+ <div> 
+  <h2> Easy Recipes </h2> 
+ <div id="rest-content">
+  <h3> {{ recipe.calories}} Calories </h3> 
+  <strong><p> {{recipe.name}} </p> </strong>   </div>
+ <form action= "likerecipe/{{recipe.id}}" method="POST" class="ui-form">
+    <input type='hidden' name='post_id' value = "{{recipe.id}}">
+    {% if user not in recipe.liked.all %}
+   <button class="munchbutton" type="submit">Like</button> 
+   {% else %}
+   <button class="munchbutton" type="submit">UnLike</button>
+   {% endif %}
+</form>
+<p> {{ recipe.liked.all.count }} likes </p>
+</div>
+</div>
+
+<br> 
+
+{%  endblock %}
+

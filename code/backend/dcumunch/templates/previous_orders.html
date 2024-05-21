@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Order history{% endblock %}
+
+{% block content %}
+<div id= "order-container">
+<table>
+    <thead class="rcornersorders">
+     
+        <tr>
+            <div >
+            <th class="rcornersorder">Order ID</th>  <br>
+            <th class="rcornersorder">Ordered on</th> 
+            <th class="rcornersorder">Total price</th>
+           
+        </div>
+
+        </tr>
+
+
+    </thead>
+    <tbody>
+        {% for ord in orders %}
+            <tr>
+                <td>{{ ord.id }}</td>
+                <td> {{ ord.date_ordered  }}</td>
+                <td> {{ord.total_price }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+
+{% endblock %}

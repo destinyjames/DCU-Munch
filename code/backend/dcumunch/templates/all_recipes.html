@@ -1,0 +1,35 @@
+{%  extends "base.html" %}
+
+{% block title %}All Recipes{%  endblock %}
+
+{%  block content %}
+
+<h1 id="usertitle"> QUICK AND EASY RECIPES !</h1>
+   {% for r in recipes %}
+   <div class = "rcorners1" >
+
+
+
+   <a href="/all-recipes/{{r.id}}" >
+   <img  class="circleimage" src="{{r.image.url}}"  height="200" width="200"/>   </a>
+
+   <div id="rest-content-meals">
+      <h5> {{ r.name}} </h5> 
+      <strong><h5> CALORIES  {{ r.calories}} </h5> </strong>  
+ 
+   <form action= "/likerecipe/{{r.id}}" method="POST" class="ui-form">
+      <input type='hidden' name='post_id' value = "{{r.id}}">
+      {% if user not in r.liked.all %}
+     <button class = "munchbutton" type="submit">Like</button>
+     {% else %}
+     <button class = "munchbutton" type="submit">UnLike</button>
+     {% endif %}
+  </form>
+  <p> {{ r.liked.all.count }} likes </p>
+
+</div>
+</div>
+   {% endfor %}
+
+
+{%  endblock %}

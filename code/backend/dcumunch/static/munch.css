@@ -1,0 +1,598 @@
+/* CSS for all pages */
+
+/* General CSS */
+body{
+    text-align: center;
+    font-family: 'Avenir Heavy', sans-serif;
+    color: white;
+    background-color: rgb(255, 123, 0);
+
+    min-height: 100vh;
+
+    
+                                                
+}
+
+
+
+#login-orange {
+    background-color: #ff7b00;
+    color: white;
+    text-align: center;
+}
+
+a, a:hover, a:visited, a:active {
+    color: inherit;
+    text-decoration: none;
+   }
+
+#googleimg:hover {
+    transform: scale(1.1);
+}
+
+#login-container
+{
+ position: fixed;
+  top: 45%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+#adminlink{
+  margin-top: 100px;
+}
+
+#frontlogo 
+{
+  position: fixed;
+  top: 60%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+nav
+{
+
+    color: rgb(255, 123, 0);
+    padding: 50%;
+    font-size: 30px;
+    box-shadow: 7px 10px 23px 1px rgba(0,0,0,0.1);
+   
+}
+
+#userimage
+{
+    border-radius: 50%;
+}
+
+.circleimage
+{
+   position: relative;
+    border-radius: 50%;
+    box-shadow: -10px 10px 23px 1px rgba(0,0,0,0.2);
+    margin-top: 0px;
+    width: 200px;
+    height: 200px;
+
+}
+
+
+.material-icons.md-48 { font-size: 48px; }
+
+#navshift a{
+height:auto;
+
+}
+
+
+.munchbutton{
+    border-radius: 16px;
+    background-color: rgb(255, 123, 0); /* Green */
+    border: none;
+    border-radius: 40px;
+    color:white;
+   
+    margin: 0px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    font-family: 'Avenir';
+  
+}
+
+.rcorners1 {
+    color: rgb(255, 123, 0);
+    margin: 20px 2px 10px;
+    justify-content: center;
+    background:  white;
+    padding: 10px;
+    width: 100%;
+    height:  20%;
+    box-shadow: -5px 10px 23px 1px rgba(0,0,0,0.3);
+    display: flex;
+    border-radius: 16px;
+}
+
+
+.rcornersinfo {
+    color: rgb(255, 123, 0);
+    justify-content: center;
+    border-radius: 16px;
+    margin: 20px 2px 10px;
+    justify-content: center;
+    background:  white;
+    padding: 10px;
+    width: 100%;
+    height:  20%;
+    box-shadow: -5px 10px 23px 1px rgba(0,0,0,0.3);
+    display: flex;
+  
+}
+
+.rcornersinfo > div {
+    margin: 10px;
+    justify-content: center;
+    
+  }
+ .rcorners1> div {
+    margin: 1%;
+    justify-content: center;
+    padding-right: 10px;
+    
+  }
+
+  #rest-content{
+    margin-top: 20px;
+    justify-content: center;
+    
+  }
+
+  #title{
+    font-size: 0vw;
+    margin-top: 3%;
+    margin-right: 2%;
+    justify-content: center;
+    
+  }
+
+
+  #usertitle{
+    font-size: 2vw;
+    margin-top: 3%;
+    margin-right: 2%;
+    justify-content: center;
+    
+  }
+
+  #rest-content-meals{
+    margin-top: 30px;
+    justify-content: center;
+    padding-left: 30px;
+    
+  }
+
+  .mealtitle{
+    padding-top: 30px;
+  }
+
+
+  @media (max-width: 900px) {
+    .mealtitle {
+      display: none;
+    }
+
+    .circleimage
+{
+  
+    border-radius: 50%;
+    padding: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    width: 150px;
+    height: 150px;
+
+
+}
+
+
+.circleimage2
+{
+  
+    border-radius: 50%;
+    padding: 0px;
+    margin-right: 0px;
+    margin-top: 10px;
+    width: 100px;
+    height: 100px;
+
+
+}
+
+#rest-content{
+    margin-top: 30px;
+    justify-content: center;
+    
+  }
+
+  .ordertitle {
+    transform: scale(0.8);
+    padding-top: 10px;
+    padding-left: 0px;
+}  
+
+.remove {
+    padding-top: 0px;
+    color: rgb(255, 123, 0);
+    margin-top: 5px;
+    justify-content: center;
+    background:  white;
+    padding: 1px;
+    box-shadow: -5px 10px 23px 1px rgba(0,0,0,0.2);
+    border-radius: 16px;
+  
+}  
+
+.flex-container {
+    transform: scale(0.8);
+    margin-left: -50px;
+    margin-top: 30px;
+    display: flex;
+
+}
+
+
+
+
+.orderprice {
+
+
+    margin-top: 300px;
+    padding-right: 90px;
+    font-size: 10px;
+    text-align: center;
+}  
+
+
+#usertitle{
+  font-size: 30px;
+  margin-top: 10%;
+  margin-right: 2%;
+  padding-bottom: 0px;
+  justify-content: center;
+  
+}
+
+.rcornersinfo3 {
+  color: rgb(255, 123, 0);
+  justify-content: center;
+  border-radius: 16px;
+   
+  padding: 0px;
+  width: 50%;
+  height:  20%;
+
+  display: flex;
+
+}
+
+.rcornersinfo3 > div {
+  margin: 10px;
+  margin-left: 0px;
+  justify-content: center;
+}
+  
+.ordertitle2 {
+
+  padding-left: 10px;
+  font-size: 10px;
+  margin-top: 50px;
+
+
+}  
+
+.ordertitle2 p{
+
+padding-left: 10px;
+font-size: 5px;
+
+}  
+
+  }
+
+  footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: white;;
+    color: rgb(255, 123, 0);
+    margin-top: 0px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    box-shadow: 7px 10px 23px 1px rgba(0,0,0,0.3);
+    font-weight: bold;
+    height: 60px;   /* Height of the footer */
+  
+  }
+
+  .flex-container {
+    margin-top: 30px;
+    display: flex;
+}
+
+
+.image-flex {
+
+    flex: 1;
+    padding-right: 30px;
+   
+}  
+
+
+.ordertitle {
+
+    padding-left: 10px;
+    font-size: 30px;
+    margin-top: 30px;
+
+  
+}  
+
+.ordertitle p{
+
+  padding-left: 10px;
+  font-size: 14px;
+  margin-top: 30px;
+
+}  
+
+.orderprice {
+    padding-top: 40px;
+    font-size: 24px;
+    padding-left: 0px;
+    white-space: nowrap;
+
+}  
+
+.remove {
+    color: rgb(255, 123, 0);
+    margin-top: 200px;
+    justify-content: center;
+    background:  white;
+    box-shadow: -5px 10px 23px 1px rgba(0,0,0,0.2);
+    border-radius: 16px;
+    padding-right: 40px;
+    padding-left: 40px;
+    margin-left: 100px;
+}  
+
+
+
+.circleimage2
+{
+  
+    border-radius: 50%;
+    padding: 0px;
+    margin-right: 0px;
+    margin-top: 30px;
+    width: 150px;
+    height: 150px;
+
+
+}
+
+#order 
+{
+  padding-top: 30px;
+  margin-top: 30px;
+  font-size: 50px;
+  text-align: center;
+}
+
+
+#orderform 
+{
+  
+  margin-top: 38px;
+  font-size: 20px;
+  text-align: center;
+ 
+}
+.product-individual
+{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+}
+
+.product-individual a
+{
+
+  color: black;
+  /* bring your own prefixes */
+
+}
+
+.product-individual-recipe
+{
+
+  padding-top: 50px;
+}
+
+
+.product-individual-recipe a
+{
+
+  color: black;
+}
+
+.circleimageindi
+{
+
+  border-radius: 50%;
+  padding: 0px;
+  margin-right: 0px;
+  width: 200px;
+  height: 200px;
+  margin-bottom: 5px;
+}
+
+.rcornersinfo2 {
+  color: rgb(255, 123, 0);
+  justify-content: center;
+  border-radius: 16px;
+  margin: 20px 3px 10px;
+  justify-content: center;
+  background:  white;
+  padding: 5px;
+  width: 100%;
+  height:  20%;
+  box-shadow: -5px 10px 23px 1px rgba(0,0,0,0.3);
+  display: flex;
+
+}
+
+.rcornersinfo2 > div {
+  margin: 10px;
+  justify-content: center;
+}
+
+.rcornersinfo3 {
+  color: rgb(255, 123, 0);
+  justify-content: center;
+  border-radius: 16px;
+  margin: 20px 2px 5px;
+  justify-content: center;
+  padding: 10px;
+  margin-top: 30px;
+  width: 100%;
+
+
+
+  display: flex;
+
+}
+
+.rcornersinfo3 > div {
+  margin-right: 30px;
+  font-size: 10px;
+  margin: 5px;
+  justify-content: center;
+}
+  
+.ordertitle2 {
+
+  padding-left: 10px;
+  font-size: 30px;
+  margin-top: 50px;
+
+
+}  
+
+.ordertitle2 p{
+
+padding-left: 10px;
+font-size: 14px;
+
+}  
+
+
+.circleimage3
+{
+  
+    border-radius: 50%;
+    padding: 0px;
+    margin-right: 20px;
+    margin-top: -10px;
+    width: 100px;
+    height: 100px;
+
+}
+
+.remove2 {
+  padding-top: 0px;
+  color: rgb(255, 123, 0);
+  margin-top: 5px;
+  justify-content: center;
+  background:  white;
+  padding-top: 20px;
+  padding: 10px;
+  box-shadow: -5px 10px 23px 1px rgba(0,0,0,0.2);
+  border-radius: 16px;
+
+}  
+
+
+.prodtitle{
+  padding-top: 20px;
+
+}
+
+#ordertable
+{
+  padding: 50px;
+}
+
+#order-container
+{
+  
+ 
+  font-size: 20px;
+  
+  /* bring your own prefixes */
+
+}
+
+
+.rcornersorders {
+  color: rgb(255, 123, 0);
+  justify-content: center;
+  border-radius: 16px;
+  margin: 20px 2px 10px;
+  justify-content: center;
+  background:  white;
+  padding: 10px;
+  width: 100%;
+  height:  20%;
+
+
+}
+
+
+#userinfo33
+{
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  padding: 50px;
+  /* bring your own prefixes */
+
+}
+
+#search
+{
+
+  padding-top: 50px;
+  /* bring your own prefixes */
+
+}
+
+
+
+#search-bar
+{
+
+  padding-right: 200px;
+  /* bring your own prefixes */
+
+}
+
+.foodhits{
+
+  padding: 30px;
+}

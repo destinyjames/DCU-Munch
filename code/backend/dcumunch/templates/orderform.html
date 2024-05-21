@@ -1,0 +1,60 @@
+
+{% extends 'base.html' %}
+
+{% block title %}Hello world {% endblock %}
+
+
+{% block content %}
+
+{%if empty%}
+    <h1 id="login-container"> Your shopping basket is empty </h1>
+{% else %}
+
+<h1 id="usertitle"> YOUR BASKET</h1>
+{% for item in sbi %}
+
+
+<div class="flex-container">
+
+<div class="image-flex">
+<img class="circleimage2" src="{{item.product_id.image.url}}" height="100" width="100"/>
+</div>
+
+<div  class = "rcorners1" >
+
+<div><p class="ordertitle"> {{item.product_id.name}} </p> 
+<p> X{{item.quantity}}  </p>
+
+</div>
+
+<div class="orderprice"><p> € {{item.price}} </p> 
+</div>
+<br>
+
+        
+
+   
+            </div>
+
+        </div>
+       
+  
+        <h2 >  <a class="remove" href="/removeitem/{{item.id}}">Remove</a>  </h2>    
+        {%endfor%}
+
+<div id="orderform">
+        <form  method="POST", action=".">
+            {% csrf_token %}
+            {{ form.as_table }}
+            <button type="submit">Order</button>
+        </form>
+    </div>
+{%endif%}
+
+
+
+
+
+{% endblock %}
+
+

@@ -1,0 +1,52 @@
+{%  extends "base.html" %}
+
+{% block title %}Add {{label}} {%  endblock %}
+
+{%  block content %}
+
+<div class="foodhits">
+
+{% if image %}
+<img src="{{image}}" >
+{% else %}
+<img src="/media/munchwhitelogo.png" height="140" width="200"> 
+
+{% endif %}
+
+<h1> {{label}} </h1>
+<p>    {{foodContentsLabel}} </p>
+
+<div class = "rcornersinfo">
+    <div><h4> {{nutrients.ENERC_KCAL}}  </h4> 
+    <strong><p> CALORIES </p> </strong>  </div>
+    <div><h4> {{nutrients.CHOCDF}} </h4> 
+    <strong><p> CARBS </p> </strong></div>
+    
+    <div><h4> {{ nutrients.PROCNT}}</h4> 
+    <strong><p> PROTEIN </p> </strong></div>
+    
+    <div><h4> {{ nutrients.FAT}} </h4> 
+    <strong><p> FATS </p> </strong></div>
+    
+<br>
+<br>
+</div>
+</div>
+
+<div class = "rcornersinfo">
+<form action="/addmeal/{{foodId}}+{{label}}+1" method="post" >
+    <button value="add_now" id="btn-alert"  > Add to Nubar </button> 
+</form>
+<form action="/addmeal/{{foodId}}+{{label}}+2" method="post" >
+    <button value="add_now" id="btn-alert"  > Add to Cafeteria </button> 
+</form>
+
+<form action="/addmeal/{{foodId}}+{{label}}+3" method="post" >
+    <button  value="add_now" id="btn-alert"  > Add to Cafe </button> 
+</form>
+
+</div>
+<a href ="/admin" >Cancel</a>
+
+{%  endblock %}
+

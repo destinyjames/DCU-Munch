@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %} {{product.name}} {% endblock %}
+
+
+{% block content %}
+
+
+<div class="product-individual">
+<h1>{{product.name}}</h1>
+<img class= "circleimageindi" src="{{product.image.url}} " height="200" width="200" />
+
+<div class = "rcornersinfo">
+    <div><h2> {{ product.calories}} </h2> 
+    <strong><p> CALORIES </p> </strong>  </div>
+    <div><h2> {{ product.carbs}}  </h2> 
+    <strong><p> CARBS </p> </strong></div>
+    
+    <div><h2> {{ product.protein}}</h2> 
+    <strong><p> PROTEIN </p> </strong></div>
+    
+    <div><h2> {{ product.fats}}  </h2> 
+    <strong><p> FATS </p> </strong></div>
+    
+    
+    </div> 
+
+    {% if added %}
+     <a   href="/addbasket/{{product.id}}" class="btn btn-light  btn-lg">Added to Basket</a>
+
+     {% else%}
+     <a   href="/addbasket/{{product.id}}" class="btn btn-light  btn-lg">Buy €{{product.price}}</a>
+{% endif %}
+
+
+
+    <a href="/munch/{{product.id}}"  class="btn btn-light  btn-lg">Munch</a>
+    <br>
+   <p> {{product.allergens}}</p>
+    <form action= "/like/{{product.id}}" method="POST" class="ui-form">
+    <input type='hidden' name='post_id' value = "{{product.id}}" >
+
+    {% if user not in product.liked.all %}
+   <button  class="btn btn-light  btn-lg" type="submit">Like</button>
+   {% else %}
+   <button class="btn btn-light  btn-lg"type="submit">UnLike</button>
+   {% endif %}
+   </form>
+   <p> {{ product.liked.all.count }} likes </p>
+</p>
+</div>
+
+{% endblock %}

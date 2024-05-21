@@ -1,0 +1,25 @@
+{%  extends "base.html" %}
+
+{% block title %}Current Orders{%  endblock %}
+
+
+{% block content %}
+{% if orders %}
+{% for n in orders %}
+{% for m in n %}
+
+<p>{{m.product_name}} X{{m.quantity}} {{m.basket_id.user_id}} {{m.prouct_id.manu_id}}</p>
+{% if forloop.last %}
+
+<a href="/doneorder/{{m.basket_id.id}}" class="btn btn-primary">Order Done</a>
+{% endif %}
+
+
+{%endfor%}
+
+{%endfor%}
+
+{% else %}
+<h2> No more Orders </h2>
+{% endif %}
+{% endblock %}

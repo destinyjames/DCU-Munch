@@ -1,0 +1,51 @@
+{%  extends "base.html" %}
+
+{% block title %}Choose Food{%  endblock %}
+
+{%  block content %}
+
+
+{% for m in hints %}
+<!-- end for loop front  end -->
+
+
+<div class="foodhits">
+
+{% if m.food.image %}
+<a href="/newmeal/{{m.food.foodId}}+{{m.food.label}}"> 
+<img src="{{m.food.image}}" ></a>
+{% else %}
+<a href="/newmeal/{{m.food.foodId}}+{{m.food.label}}"> 
+<img src="/media/munchwhitelogo.png" height="140" width="200"> 
+</a>
+{% endif %}
+
+<h1> {{m.food.label}} </h1>
+<p>    {{m.food.foodContentsLabel}} </p>
+
+<div class = "rcornersinfo">
+    <div><h4> {{m.food.nutrients.ENERC_KCAL}}  </h4> 
+    <strong><p> CALORIES </p> </strong>  </div>
+    <div><h4> {{m.food.nutrients.CHOCDF}} </h4> 
+    <strong><p> CARBS </p> </strong></div>
+    
+    <div><h4> {{ m.food.nutrients.PROCNT}}</h4> 
+    <strong><p> PROTEIN </p> </strong></div>
+    
+    <div><h4> {{ m.food.nutrients.FAT}} </h4> 
+    <strong><p> FATS </p> </strong></div>
+    
+<br>
+<br>
+</div>
+</div>
+
+
+{% endfor %}
+
+{%  endblock %}
+
+
+
+
+
